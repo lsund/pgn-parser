@@ -1,6 +1,6 @@
-name:                PGNParser
+name:                pgn-parser
 version:             0.1.0.0
-github:              "lsund/PGNParser"
+github:              "lsund/pgn-parser"
 license:             BSD3
 author:              "Ludvig Sundström"
 maintainer:          "lud.sund@gmail..com"
@@ -10,7 +10,7 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
-description:         Please see the README on Github at <https://github.com/githubuser/PGNParser#readme>
+description:
 
 dependencies:
 - base >= 4.7 && < 5
@@ -22,7 +22,7 @@ library:
   source-dirs: src
 
 tests:
-  PGNParser-test:
+  pgn-parser-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -30,4 +30,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - PGNParser
+    - pgn-parser
