@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d513770def85c42bd890cf88b61f5f9569ead41323facf285fb8ebbbcb4914a9
+-- hash: e796a44ec25cbb3f80d076bd60182a36e53b1b506b42481f0bb4a08081f5f73b
 
 name:           pgn-parser
 version:        0.1.0.0
@@ -33,7 +33,9 @@ library
     , protolude
     , text
   exposed-modules:
-      PGNParser
+      PGNParser.Data.Metadata
+      PGNParser.Data.MoveText
+      PGNParser.PGNParser
   other-modules:
       Paths_pgn_parser
   default-language: Haskell2010
