@@ -10,7 +10,7 @@ extra-source-files:
 - README.md
 - ChangeLog.md
 
-description: "Program for parsing PGN into Haskell data structures."
+description: "Program for parsing PGN into SQL-friendly data structures."
 
 dependencies:
 - base >= 4.7 && < 5

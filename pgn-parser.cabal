@@ -2,11 +2,11 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ebf515a248a97eddde0f6fca0ad8dfe021f1ef829da25d467961cf5a442bc1ea
+-- hash: e7a5fc3be6f4a9a19b83815f65ca01aaffe482174ebaef068a61ef70e253b7c2
 
 name:           pgn-parser
 version:        0.1.0.0
-description:    A PGN Parser written in haskell
+description:    Program for parsing PGN into SQL-friendly data structures.
 homepage:       https://github.com/lsund/pgn-parser#readme
 bug-reports:    https://github.com/lsund/pgn-parser/issues
 author:         Ludvig Sundström
@@ -34,7 +34,7 @@ library
     , text
   exposed-modules:
       PGNParser.Data.Metadata
-      PGNParser.Data.MoveText
+      PGNParser.Data.Move
       PGNParser.PGNParser
   other-modules:
       Paths_pgn_parser

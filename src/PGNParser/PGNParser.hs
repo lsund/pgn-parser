@@ -7,19 +7,19 @@ import Text.ParserCombinators.Parsec
 import Text.Parsec.Prim                 hiding  (try)
 
 import PGNParser.Data.Metadata
-import PGNParser.Data.MoveText
+import PGNParser.Data.Move
 
 
 type PGNParser u = ParsecT String u Identity
 
-data Game = Game Metadata [MoveText]
+data Game = Game Metadata [Move]
 
 
 parseSingleMove :: PGNParser u String
 parseSingleMove = many1 (oneOf "abcdefgh12345678NBRQKxOO+-=")
 
 
-parseMove :: PGNParser u MoveText
+parseMove :: PGNParser u Move
 parseMove = do
     n <- many1 digit
     _ <- char '.'
@@ -29,7 +29,7 @@ parseMove = do
     return $ Move (read n :: Int) w b
 
 
-parseResult :: PGNParser u MoveText
+parseResult :: PGNParser u Move
 parseResult = do
     w <- try (string "1/2") <|> string "1" <|> string "0"
     _ <- char '-'
@@ -37,13 +37,13 @@ parseResult = do
     return $ GameResult w b
 
 
-parseUnfinished :: PGNParser u MoveText
+parseUnfinished :: PGNParser u Move
 parseUnfinished = do
     _ <- char '*'
     return Unfinished
 
 
-parseMoveLine :: PGNParser u [MoveText]
+parseMoveLine :: PGNParser u [Move]
 parseMoveLine = sepBy
                     (try parseMove <|> try parseResult <|> parseUnfinished)
                     (many $ char ' ')
